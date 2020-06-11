@@ -4213,8 +4213,9 @@ http://ww1.microchip.com/downloads/en/DeviceDoc/MIC550X.pdf&lt;/il&gt;
 <attribute name="MFN_MANUFACTURER" value="NXP USA Inc."/>
 </part>
 <part name="SW1" library="LinnesLab-Switches" deviceset="SWITCH.MOM" device=""/>
-<part name="SW2" library="LinnesLab-Switches" deviceset="SWITCH.MOM" device=""/>
-<part name="SW5" library="LinnesLab-Switches" deviceset="SWITCH.MOM" device=""/>
+<part name="GND1" library="LinnesLab-Symbols" deviceset="GND" device=""/>
+<part name="SW6" library="LinnesLab-Switches" deviceset="SWITCH.MOM" device=""/>
+<part name="GND3" library="LinnesLab-Symbols" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4323,25 +4324,24 @@ SD.CS pin.</text>
 <text x="345.44" y="-60.96" size="1.27" layer="97">Back-up
 battery
 if desired</text>
-<text x="71.12" y="152.4" size="6.4516" layer="91" font="vector">nRF52832 Module</text>
-<text x="370.84" y="27.94" size="6.4516" layer="91" font="vector">Buttons</text>
-<text x="71.12" y="-7.62" size="6.4516" layer="91" font="vector">Power Management</text>
-<text x="223.52" y="5.08" size="6.4516" layer="91" font="vector">SD Card</text>
-<text x="355.6" y="-22.86" size="6.4516" layer="91" font="vector">Real-Time Clock</text>
-<text x="248.92" y="144.78" size="6.4516" layer="91" font="vector">Cortex Debugger/
+<text x="71.12" y="152.4" size="6.4516" layer="97" font="vector">nRF52832 Module</text>
+<text x="370.84" y="27.94" size="6.4516" layer="97" font="vector">Buttons</text>
+<text x="71.12" y="-7.62" size="6.4516" layer="97" font="vector">Power Management</text>
+<text x="223.52" y="5.08" size="6.4516" layer="97" font="vector">SD Card</text>
+<text x="355.6" y="-22.86" size="6.4516" layer="97" font="vector">Real-Time Clock</text>
+<text x="248.92" y="144.78" size="6.4516" layer="97" font="vector">Cortex Debugger/
 Programmer</text>
 <text x="269.24" y="86.36" size="6.4516" layer="91" font="vector">RTC
 </text>
-<text x="383.54" y="162.56" size="6.4516" layer="91" font="vector">OLED</text>
+<text x="383.54" y="162.56" size="6.4516" layer="97" font="vector">OLED</text>
 <wire x1="-50.8" y1="190.5" x2="449.58" y2="190.5" width="0.254" layer="94"/>
 <wire x1="449.58" y1="190.5" x2="449.58" y2="-111.76" width="0.254" layer="94"/>
 <wire x1="449.58" y1="-111.76" x2="-50.8" y2="-111.76" width="0.254" layer="94"/>
 <wire x1="-50.8" y1="-111.76" x2="-50.8" y2="190.5" width="0.254" layer="94"/>
-<wire x1="-40.64" y1="185.42" x2="441.96" y2="185.42" width="0.254" layer="94" style="longdash"/>
+<wire x1="-43.18" y1="185.42" x2="441.96" y2="185.42" width="0.254" layer="94" style="longdash"/>
 <wire x1="441.96" y1="185.42" x2="441.96" y2="-106.68" width="0.254" layer="94" style="longdash"/>
 <wire x1="441.96" y1="-106.68" x2="-43.18" y2="-106.68" width="0.254" layer="94" style="longdash"/>
 <wire x1="-43.18" y1="-106.68" x2="-43.18" y2="185.42" width="0.254" layer="94" style="longdash"/>
-<wire x1="-43.18" y1="185.42" x2="-40.64" y2="185.42" width="0.254" layer="94" style="longdash"/>
 <wire x1="-43.18" y1="5.08" x2="218.44" y2="5.08" width="0.254" layer="97" style="longdash"/>
 <wire x1="218.44" y1="5.08" x2="218.44" y2="45.72" width="0.254" layer="97" style="longdash"/>
 <wire x1="218.44" y1="45.72" x2="236.22" y2="45.72" width="0.254" layer="97" style="longdash"/>
@@ -4354,6 +4354,29 @@ Programmer</text>
 <wire x1="314.96" y1="-5.08" x2="441.96" y2="-5.08" width="0.254" layer="97" style="longdash"/>
 <wire x1="314.96" y1="-7.62" x2="314.96" y2="-106.68" width="0.254" layer="97" style="longdash"/>
 <wire x1="200.66" y1="2.54" x2="200.66" y2="-104.14" width="0.254" layer="97" style="longdash"/>
+<text x="-101.6" y="119.38" size="1.778" layer="97">PINS THAT NEED ASSIGNED
+
+
+DIGITAL OUTPUTS
+
+Digital GPIO
+CS.OLED
+RESET.OLED
+DC.OLED
+[SPI]
+[I2C]
+SD.CS
+(Optional) Card Detect1 and 2
+
+DIGITAL INPUTS
+3x Buttons
+Charge Status
+
+ANALOG INPUTS
+Battery Monitor
+
+
+ANALOG OUTPUTS</text>
 </plain>
 <instances>
 <instance part="GND14" gate="G$1" x="53.34" y="68.58" smashed="yes">
@@ -4706,17 +4729,19 @@ Programmer</text>
 <attribute name="MFN" x="373.38" y="-50.8" size="1.27" layer="96" display="off"/>
 <attribute name="MFN_MANUFACTURER" x="373.38" y="-50.8" size="1.27" layer="96" display="off"/>
 </instance>
-<instance part="SW1" gate="G$1" x="355.6" y="7.62" smashed="yes">
-<attribute name="NAME" x="355.6" y="12.446" size="1.778" layer="95" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="355.6" y="4.826" size="1.778" layer="96" font="vector" align="top-center"/>
+<instance part="SW1" gate="G$1" x="350.52" y="12.7" smashed="yes">
+<attribute name="NAME" x="350.52" y="17.526" size="1.778" layer="95" font="vector" align="bottom-center"/>
+<attribute name="VALUE" x="350.52" y="9.906" size="1.778" layer="96" font="vector" align="top-center"/>
 </instance>
-<instance part="SW2" gate="G$1" x="383.54" y="7.62" smashed="yes">
-<attribute name="NAME" x="383.54" y="12.446" size="1.778" layer="95" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="383.54" y="4.826" size="1.778" layer="96" font="vector" align="top-center"/>
+<instance part="GND1" gate="G$1" x="360.68" y="5.08" smashed="yes">
+<attribute name="VALUE" x="360.68" y="4.826" size="1.778" layer="96" align="top-center"/>
 </instance>
-<instance part="SW5" gate="G$1" x="411.48" y="7.62" smashed="yes">
-<attribute name="NAME" x="411.48" y="12.446" size="1.778" layer="95" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="411.48" y="4.826" size="1.778" layer="96" font="vector" align="top-center"/>
+<instance part="SW6" gate="G$1" x="386.08" y="12.7" smashed="yes">
+<attribute name="NAME" x="386.08" y="17.526" size="1.778" layer="95" font="vector" align="bottom-center"/>
+<attribute name="VALUE" x="386.08" y="9.906" size="1.778" layer="96" font="vector" align="top-center"/>
+</instance>
+<instance part="GND3" gate="G$1" x="396.24" y="5.08" smashed="yes">
+<attribute name="VALUE" x="396.24" y="4.826" size="1.778" layer="96" align="top-center"/>
 </instance>
 </instances>
 <busses>
@@ -4951,6 +4976,10 @@ Programmer</text>
 <wire x1="55.88" y1="-66.04" x2="58.42" y2="-66.04" width="0.1524" layer="91"/>
 <pinref part="GND40" gate="G$1" pin="GND"/>
 <wire x1="58.42" y1="-66.04" x2="58.42" y2="-73.66" width="0.1524" layer="91"/>
+<pinref part="USB2" gate="G$1" pin="SHIELD"/>
+<wire x1="55.88" y1="-53.34" x2="58.42" y2="-53.34" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="-53.34" x2="58.42" y2="-66.04" width="0.1524" layer="91"/>
+<junction x="58.42" y="-66.04"/>
 </segment>
 <segment>
 <pinref part="J2" gate="G$1" pin="1"/>
@@ -4984,6 +5013,26 @@ Programmer</text>
 <wire x1="421.64" y1="-53.34" x2="421.64" y2="-50.8" width="0.1524" layer="91"/>
 <pinref part="GND5" gate="G$1" pin="GND"/>
 <pinref part="C2" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="SW1" gate="G$1" pin="3"/>
+<wire x1="355.6" y1="12.7" x2="360.68" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="360.68" y1="12.7" x2="360.68" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="G$1" pin="4"/>
+<wire x1="360.68" y1="10.16" x2="360.68" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="355.6" y1="10.16" x2="360.68" y2="10.16" width="0.1524" layer="91"/>
+<junction x="360.68" y="10.16"/>
+<pinref part="GND1" gate="G$1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="SW6" gate="G$1" pin="3"/>
+<wire x1="391.16" y1="12.7" x2="396.24" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="396.24" y1="12.7" x2="396.24" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="SW6" gate="G$1" pin="4"/>
+<wire x1="396.24" y1="10.16" x2="396.24" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="391.16" y1="10.16" x2="396.24" y2="10.16" width="0.1524" layer="91"/>
+<junction x="396.24" y="10.16"/>
+<pinref part="GND3" gate="G$1" pin="GND"/>
 </segment>
 </net>
 <net name="SWDIO" class="0">
@@ -5487,15 +5536,15 @@ Programmer</text>
 <net name="USB-" class="0">
 <segment>
 <pinref part="USB2" gate="G$1" pin="D-"/>
-<wire x1="55.88" y1="-58.42" x2="58.42" y2="-58.42" width="0.1524" layer="91"/>
-<label x="58.42" y="-58.42" size="1.27" layer="95" xref="yes"/>
+<wire x1="55.88" y1="-58.42" x2="60.96" y2="-58.42" width="0.1524" layer="91"/>
+<label x="60.96" y="-58.42" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="USB+" class="0">
 <segment>
 <pinref part="USB2" gate="G$1" pin="D+"/>
-<wire x1="55.88" y1="-60.96" x2="58.42" y2="-60.96" width="0.1524" layer="91"/>
-<label x="58.42" y="-60.96" size="1.27" layer="95" xref="yes"/>
+<wire x1="55.88" y1="-60.96" x2="60.96" y2="-60.96" width="0.1524" layer="91"/>
+<label x="60.96" y="-60.96" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="BATT" class="0">
@@ -5556,11 +5605,16 @@ Programmer</text>
 <pinref part="U4" gate="G$1" pin="OSCI"/>
 </segment>
 </net>
-<net name="VBATT" class="0">
+<net name="SW1" class="0">
 <segment>
-<wire x1="358.14" y1="-53.34" x2="355.6" y2="-53.34" width="0.1524" layer="91"/>
-<label x="355.6" y="-53.34" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="U4" gate="G$1" pin="VBAT"/>
+<pinref part="SW1" gate="G$1" pin="1"/>
+<wire x1="345.44" y1="12.7" x2="340.36" y2="12.7" width="0.1524" layer="91"/>
+<label x="340.36" y="12.7" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="SW6" gate="G$1" pin="1"/>
+<wire x1="381" y1="12.7" x2="375.92" y2="12.7" width="0.1524" layer="91"/>
+<label x="375.92" y="12.7" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
