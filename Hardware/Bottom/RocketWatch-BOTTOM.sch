@@ -2634,7 +2634,7 @@ and LEDs</text>
 <label x="109.22" y="-22.86" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="TIA" class="0">
+<net name="A6/TIA" class="0">
 <segment>
 <wire x1="185.42" y1="25.4" x2="180.34" y2="25.4" width="0.1524" layer="91"/>
 <label x="180.34" y="25.4" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -2652,6 +2652,11 @@ and LEDs</text>
 <pinref part="OP4" gate="G$1" pin="OUT"/>
 <wire x1="129.54" y1="109.22" x2="132.08" y2="109.22" width="0.1524" layer="91"/>
 <junction x="132.08" y="109.22"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="5"/>
+<wire x1="180.34" y1="-17.78" x2="185.42" y2="-17.78" width="0.1524" layer="91"/>
+<label x="185.42" y="-17.78" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="PD.C" class="0">
@@ -2788,12 +2793,17 @@ and LEDs</text>
 <junction x="281.94" y="22.86"/>
 </segment>
 </net>
-<net name="LED.CTRL" class="0">
+<net name="D29/LED.CTRL" class="0">
 <segment>
 <pinref part="U$4" gate="G$1" pin="A"/>
 <wire x1="279.4" y1="27.94" x2="281.94" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="281.94" y1="27.94" x2="281.94" y2="35.56" width="0.1524" layer="91"/>
 <label x="281.94" y="35.56" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="6"/>
+<wire x1="180.34" y1="-15.24" x2="185.42" y2="-15.24" width="0.1524" layer="91"/>
+<label x="185.42" y="-15.24" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -2807,7 +2817,7 @@ and LEDs</text>
 <junction x="114.3" y="25.4"/>
 </segment>
 </net>
-<net name="PPG" class="0">
+<net name="A7/PPG" class="0">
 <segment>
 <wire x1="213.36" y1="25.4" x2="215.9" y2="25.4" width="0.1524" layer="91"/>
 <label x="215.9" y="25.4" size="1.27" layer="95" xref="yes"/>
@@ -2823,6 +2833,11 @@ and LEDs</text>
 <junction x="271.78" y="111.76"/>
 <label x="271.78" y="121.92" size="1.27" layer="95" rot="R180" xref="yes"/>
 <label x="271.78" y="101.6" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="7"/>
+<wire x1="180.34" y1="-12.7" x2="185.42" y2="-12.7" width="0.1524" layer="91"/>
+<label x="185.42" y="-12.7" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$13" class="0">
