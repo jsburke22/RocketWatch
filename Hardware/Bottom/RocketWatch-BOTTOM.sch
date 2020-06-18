@@ -2690,6 +2690,11 @@ and LEDs</text>
 <wire x1="83.82" y1="109.22" x2="86.36" y2="109.22" width="0.1524" layer="91"/>
 <label x="86.36" y="109.22" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<wire x1="302.26" y1="27.94" x2="302.26" y2="30.48" width="0.1524" layer="91"/>
+<label x="302.26" y="30.48" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="Q1" gate="G$1" pin="C"/>
+</segment>
 </net>
 <net name="VREF" class="0">
 <segment>
@@ -2717,13 +2722,6 @@ and LEDs</text>
 <wire x1="254" y1="99.06" x2="251.46" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="251.46" y1="99.06" x2="251.46" y2="93.98" width="0.1524" layer="91"/>
 <label x="251.46" y="93.98" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="LED" class="0">
-<segment>
-<wire x1="302.26" y1="27.94" x2="302.26" y2="30.48" width="0.1524" layer="91"/>
-<label x="302.26" y="30.48" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="Q1" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$8" class="0">
